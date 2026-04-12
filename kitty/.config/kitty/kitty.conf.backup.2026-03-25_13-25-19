@@ -1,0 +1,30 @@
+# BEGIN_KITTY_THEME
+# Tokyo Night Moon
+include current-theme.conf
+# END_KITTY_THEME
+
+# No title bar
+hide_window_decorations yes
+
+# cursor
+cursor_trail 10
+cursor_trail_start_threshoild 0
+cursor_trail_decay 0.01 0.05
+cursor_shape block
+
+# FONTS
+font_family FiraCode Nerd Font Mono
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+
+font_size 17
+
+# --- Window Margin (Outer Space) ---
+# The margin between windows/edges, in points.
+window_margin_width 5.0
+
+# --- Window Padding (Inner Space) ---
+# The padding between content and the window frame, in cell units.
+# window_padding_width 10
+

@@ -1,0 +1,44 @@
+# --- General Settings ---
+ignore-empty-password
+show-failed-attempts
+indicator-caps-lock
+
+image=$HOME/.config/swaylock/tele.jpg 
+
+# --- Clock ---
+clock
+timestr=%H:%M
+datestr=%a %b %d
+font="Sans"
+font-size=64
+
+# --- Appearance ---
+indicator-radius=120
+indicator-thickness=10
+line-uses-inside
+
+# --- Colors (Nord Theme Style) ---
+# Format: rrggbbaa
+
+key-hl-color=88c0d0ff
+bs-hl-color=bf616aff
+
+inside-color=2e3440cc
+inside-clear-color=81a1c1cc
+inside-ver-color=5e81accc
+inside-wrong-color=bf616acc
+
+ring-color=3b4252ff
+ring-clear-color=88c0d0ff
+ring-ver-color=81a1c1ff
+ring-wrong-color=d08770ff
+
+text-color=eceff4ff
+text-clear-color=2e3440ff
+text-ver-color=2e3440ff
+text-wrong-color=2e3440ff
+
+# --- Layout ---
+# Moves the clock and indicator if desired (default is center)
+# indicator-x-position=100
+# indicator-y-position=100ndicator-thickness=10ext-caps-lock-color=009ddcs-hl-color=f38ba8
