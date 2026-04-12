@@ -153,6 +153,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    nh
     xdg-utils
     tailscale
     kanata
