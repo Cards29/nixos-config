@@ -86,7 +86,7 @@
     isNormalUser = true;
     description = "Rahinur Bin Naushad";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -101,11 +101,9 @@
   programs.vscode.enable = true;
   programs.zsh.enable = true;
   programs.nix-index.enable = true;
+  programs.nix-ld.enable = true;
   programs.tmux.enable = true;
-  # services.kanata = {
-  #   enable = true;
-  #   keyboards.default.configFile = /home/arcane/.config/kanata/config.kbd;
-  # };
+
   programs.git = {
     enable = true;
 
@@ -121,6 +119,33 @@
     # Automatically ignores common OS/IDE junk
     # ignores = [ ".DS_Store" "*.swp" "node_modules/" "tmp*" ];
   };
+
+  # services
+  services.tailscale.enable = true;
+  # services.kanata = {
+  #   enable = true;
+  #   # keyboards.arcane.configFile = builtins.readFile ./kanata/.config/kanata/config.kbd;
+  #   keyboards.arcane.config = "
+  #
+  #     (defsrc
+  #       caps)
+  #
+  #     (defvar 
+  #       tap-time 150
+  #       hold-time 200) 
+  #
+  #     (defalias
+  #       ;; Caps: Tap for Esc, Hold for LCtl
+  #       caps_esc_ctrl (tap-hold $tap-time $hold-time esc lctl))
+  #
+  #     (deflayer default
+  #       @caps_esc_ctrl)
+  #
+  #   ";
+  # };
+
+  # Docker
+  virtualisation.docker.enable = true;
   
   # Allow unfree papckages
   nixpkgs.config.allowUnfree = true;
@@ -128,6 +153,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    xdg-utils
+    tailscale
+    kanata
     lazygit
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
