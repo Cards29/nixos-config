@@ -100,6 +100,7 @@
   programs.steam.enable = true;
   programs.vscode.enable = true;
   programs.zsh.enable = true;
+  programs.nix-index.enable = true;
   programs.tmux.enable = true;
   # services.kanata = {
   #   enable = true;
@@ -131,8 +132,8 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     gcc
-    go
     rustup
+    comma
     uv
     python315
     direnv
