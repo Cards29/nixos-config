@@ -1,0 +1,25 @@
+(defsrc 
+  caps a s d f j k l ;
+)
+
+(defvar 
+  tap-time 150 hold-time 200
+) 
+
+
+(defalias 
+  ;; Tap Caps for Esc, Hold for Ctrl 
+  escctrl (tap-hold $tap-time $hold-time esc esc) 
+  a_mod (tap-hold $tap-time $hold-time a lmet) 
+  s_mod (tap-hold $tap-time $hold-time s lalt)
+  d_mod (tap-hold $tap-time $hold-time d lsft) 
+  f_mod (tap-hold $tap-time $hold-time f lctl) 
+  j_mod (tap-hold $tap-time $hold-time j rctl) 
+  k_mod (tap-hold $tap-time $hold-time k rsft) 
+  l_mod (tap-hold $tap-time $hold-time l ralt) 
+  semi_mod (tap-hold $tap-time $hold-time ; rmet)
+)
+
+(deflayer default
+  @escctrl @a_mod @s_mod @d_mod @f_mod @j_mod @k_mod @l_mod @semi_mod 
+)
