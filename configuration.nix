@@ -153,6 +153,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    home-manager
+    gnomeExtensions.tweaks-in-system-menu
+    gnome-extension-manager
+    gnome-tweaks
+    ticktick
     nh
     xdg-utils
     tailscale
