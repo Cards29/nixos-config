@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./modules/gui-apps.nix
       ./modules/cli-tools.nix
+      ./modules/automation.nix
     ];
 
   # Bootloader.

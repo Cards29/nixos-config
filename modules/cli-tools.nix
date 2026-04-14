@@ -18,6 +18,9 @@
   virtualisation.docker.enable = true;
 
   environment.systemPackages = with pkgs; [
+    pkg-config
+    binutils
+    openssl
     home-manager
     xdg-utils
     tailscale
