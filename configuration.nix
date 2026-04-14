@@ -97,29 +97,6 @@
   # In your nixos configuration
   environment.variables.NH_FLAKE = "/etc/nixos";
 
-  system.autoUpgrade = {
-    enable = true;
-    # This tells NixOS to use your flake for the upgrade
-    flake = "/etc/nixos"; 
-    
-    # This flag is the secret sauce: it updates the lock file before rebuilding
-    flags = [
-      "--update-input" "nixpkgs" # Updates the main nixpkgs input
-      "--commit-lock-file"      # If /etc/nixos is a git repo, it commits the update
-    ];
-  
-    dates = "weekly";
-    randomizedDelaySec = "45min";
-  };
-  
-  # Keep the cleaning automation we discussed earlier
-  programs.nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep 7 --keep-since 7d";
-  };
-
-
   # Nix experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
