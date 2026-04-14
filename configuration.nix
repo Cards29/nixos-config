@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./modules/gui-apps.nix
     ];
 
   # Bootloader.
@@ -96,9 +97,6 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Install programs
-  programs.firefox.enable = true;
-  programs.steam.enable = true;
-  programs.vscode.enable = true;
   programs.zsh.enable = true;
   programs.nix-index.enable = true;
   programs.nix-ld.enable = true;
