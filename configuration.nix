@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./modules/gui-apps.nix
+      ./modules/cli-tools.nix
     ];
 
   # Bootloader.
