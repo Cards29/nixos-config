@@ -1,6 +1,8 @@
 { pkgs, niri, ... }: {
   # 1. Import the NixOS module provided by the flake
   imports = [ niri.nixosModules.niri ];
+  nixpkgs.overlays = [ niri.overlays.niri ];
+
 
   # 2. Enable niri
   programs.niri.enable = true;
