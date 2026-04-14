@@ -19,7 +19,6 @@
 
   environment.systemPackages = with pkgs; [
     home-manager
-    nh
     xdg-utils
     tailscale
     kanata
