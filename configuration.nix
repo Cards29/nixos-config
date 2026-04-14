@@ -12,7 +12,10 @@
       ./modules/cli-tools.nix
       ./modules/automation.nix
       ./modules/gnome-extensions.nix
-      ./niri.nix
+      ./modules/niri.nix
+      ./modules/dms.nix
+      inputs.dms.nixosModules.dank-material-shell
+      inputs.dms-plugin-registry.modules.default
     ];
 
   # Bootloader.

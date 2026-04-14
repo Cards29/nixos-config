@@ -10,21 +10,45 @@
     };
 
     # niri.url = "github:YaLTeR/niri";
-    niri.url = "github:sodiboo/niri-flake";
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dms-plugin-registry = {
+      url = "github:AvengeMedia/dms-plugin-registry";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/quickshell/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, niri, zen-browser, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, niri, zen-browser, dms, dgop, ... }@inputs: {
     nixosConfigurations = {
 
       # Change "nixos" to your actual hostname
       "nixos" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";   # Change only if you're on ARM (like Raspberry Pi)
 
-        specialArgs = { inherit inputs home-manager niri; };
+        specialArgs = { inherit inputs ; };
 
         modules = [
           ./configuration.nix
