@@ -1,15 +1,17 @@
 { pkgs, niri, ... }: {
-  # This uses the niri input from your flake
-  programs.niri = {
-    enable = true;
-    package = niri.packages.${pkgs.system}.niri;
-  };
+  # 1. Import the NixOS module provided by the flake
+  imports = [ niri.nixosModules.niri ];
 
-  # Add specific niri-related tools here
-  environment.systemPackages = with pkgs; [
-    waybar
-    swaybg
-    xwayland-satellite # If you need X11 apps
-    swww
-  ];
+  # 2. Enable niri
+  programs.niri.enable = true;
+
+  # 3. Optional: Use the absolute latest "unstable" version from the flake
+  # If you don't set this, it defaults to the stable version in the flake.
+  programs.niri.package = pkgs.niri-unstable; 
+
+  # The sodiboo module automatically handles:
+  # - Polkit (KDE agent by default)
+  # - GNOME Keyring
+  # - XDG Desktop Portals (required for screen sharing)
+  # - PAM entry for swaylock
 }

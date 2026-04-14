@@ -9,17 +9,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri.url = "github:YaLTeR/niri";
+    # niri.url = "github:YaLTeR/niri";
+    niri.url = "github:sodiboo/niri-flake";
   };
 
-  outputs = { self, nixpkgs, niri, ... }: {
+  outputs = { self, nixpkgs, home-manager, niri, ... }: {
     nixosConfigurations = {
 
       # Change "nixos" to your actual hostname
       "nixos" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";   # Change only if you're on ARM (like Raspberry Pi)
 
-        specialArgs = { inherit niri; };
+        specialArgs = { inherit home-manager niri; };
 
         modules = [
           ./configuration.nix
