@@ -17,7 +17,12 @@
   services.tailscale.enable = true;
   virtualisation.docker.enable = true;
 
+  services.playerctld.enable = true;
+
   environment.systemPackages = with pkgs; [
+    brightnessctl
+    playerctl
+    fuzzel
     pkg-config
     binutils
     openssl
