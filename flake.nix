@@ -11,9 +11,13 @@
 
     # niri.url = "github:YaLTeR/niri";
     niri.url = "github:sodiboo/niri-flake";
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, niri, ... }: {
+  outputs = { self, nixpkgs, home-manager, niri, zen-browser, ... }: {
     nixosConfigurations = {
 
       # Change "nixos" to your actual hostname
