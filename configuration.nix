@@ -11,6 +11,7 @@
       ./modules/gui-apps.nix
       ./modules/cli-tools.nix
       ./modules/automation.nix
+      ./niri.nix
     ];
 
   # Bootloader.
