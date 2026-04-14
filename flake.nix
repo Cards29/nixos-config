@@ -17,14 +17,14 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, niri, zen-browser, ... }: {
+  outputs = { self, nixpkgs, home-manager, niri, zen-browser, ... }@inputs: {
     nixosConfigurations = {
 
       # Change "nixos" to your actual hostname
       "nixos" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";   # Change only if you're on ARM (like Raspberry Pi)
 
-        specialArgs = { inherit home-manager niri; };
+        specialArgs = { inherit inputs home-manager niri; };
 
         modules = [
           ./configuration.nix
