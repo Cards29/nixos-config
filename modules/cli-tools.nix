@@ -20,6 +20,9 @@
   services.playerctld.enable = true;
 
   environment.systemPackages = with pkgs; [
+    cava
+    wtype
+    khal
     brightnessctl
     playerctl
     fuzzel

@@ -12,9 +12,9 @@
       ./modules/cli-tools.nix
       ./modules/automation.nix
       ./modules/gnome-extensions.nix
-      ./modules/niri.nix
+      ./niri.nix
       ./modules/dms.nix
-      inputs.dms.nixosModules.dank-material-shell
+      inputs.dms.nixosModules.default 
       inputs.dms-plugin-registry.modules.default
     ];
 

@@ -1,10 +1,13 @@
 {pkgs, configs, inputs, ... }: 
 
 {
+  imports = [
+  ];
+
   programs.dank-material-shell = {
     enable = true;
     enableSystemMonitoring = true;
-    dgop.package = inputs.dgop.packages.${pkgs.system}.default;
+    # dgop.package = inputs.dgop.packages.${pkgs.system}.default;
 
     systemd = {
       enable = true;             # Systemd service for auto-start
@@ -28,13 +31,12 @@
     };
 
     # Core features
-      enableSystemMonitoring = true;     # System monitoring widgets (dgop)
-      enableVPN = true;                  # VPN management widget
-      enableDynamicTheming = true;       # Wallpaper-based theming (matugen)
-      enableAudioWavelength = true;      # Audio visualizer (cava)
-      enableCalendarEvents = true;       # Calendar integration (khal)
-      enableClipboardPaste = true;       # Pasting items from the clipboard (wtype)
-    };
+    # enableSystemMonitoring = true;     # System monitoring widgets (dgop)
+    # enableVPN = true;                  # VPN management widget
+    enableDynamicTheming = true;       # Wallpaper-based theming (matugen)
+    enableAudioWavelength = true;      # Audio visualizer (cava)
+    enableCalendarEvents = true;       # Calendar integration (khal)
+    enableClipboardPaste = true;       # Pasting items from the clipboard (wtype)
 
     plugins = {
       # Simply enable plugins by their ID (from the registry)
