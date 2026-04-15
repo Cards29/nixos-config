@@ -31,6 +31,11 @@
     };
   };
 
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-curses;
+  };
+
   # --- System Services ---
   services.tailscale.enable = true;
   services.playerctld.enable = true;
@@ -41,6 +46,7 @@
   environment.systemPackages = with pkgs; [
     # 0. Others
     scrcpy
+    pinentry-curses
 
     # 1. System Recovery & Core Utilities
     vim

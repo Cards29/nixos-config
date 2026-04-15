@@ -12,8 +12,9 @@
       ./modules/cli-tools.nix
       ./modules/automation.nix
       ./modules/gnome-extensions.nix
-      ./niri.nix
       ./modules/dms.nix
+      ./modules/cursors.nix
+      ./niri.nix
       inputs.dms.nixosModules.default 
       inputs.dms-plugin-registry.modules.default
     ];
