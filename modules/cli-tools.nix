@@ -34,6 +34,7 @@
   # --- System Services ---
   services.tailscale.enable = true;
   services.playerctld.enable = true;
+  services.asusd.enable = true;
   virtualisation.docker.enable = true;
 
   # --- System Packages (The Essentials Only) ---
