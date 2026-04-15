@@ -2,6 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    bibata-cursors-translucent
+    bibata-cursors
   ];
 }
