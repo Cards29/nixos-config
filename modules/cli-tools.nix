@@ -70,7 +70,6 @@
     lazygit
     wget
     gcc
-    rustup
     comma
     uv
     python315
