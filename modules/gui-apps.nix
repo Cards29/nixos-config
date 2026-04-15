@@ -6,6 +6,7 @@
   programs.vscode.enable = true;
 
   environment.systemPackages = with pkgs; [
+    bitwarden-desktop
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     gnome-tweaks
     ticktick

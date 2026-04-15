@@ -1,8 +1,19 @@
 {pkgs, ... }: {
   programs.zsh.enable = true;
+  programs.zsh.interactiveShellInit = ''
+    # Override the command_not_found_handler to use nh
+    command_not_found_handler() {
+      nh search "$1"
+      return 127
+    }
+  '';
+  # Disable the default NixOS command-not-found perl script to prevent conflicts
+  programs.command-not-found.enable = false;
   programs.nix-index.enable = true;
   programs.nix-ld.enable = true;
   programs.tmux.enable = true;
+
+  programs.nh.enable = true;
 
   programs.git = {
     enable = true;
@@ -20,6 +31,10 @@
   services.playerctld.enable = true;
 
   environment.systemPackages = with pkgs; [
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    supergfxctl
+    asusctl
+
     # Clipboard & Screenshots
     wl-clipboard
     cliphist
@@ -53,7 +68,6 @@
     tailscale
     kanata
     lazygit
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     gcc
     rustup
