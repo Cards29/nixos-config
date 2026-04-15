@@ -4,6 +4,7 @@
   programs.firefox.enable = true;
   programs.steam.enable = true;
   programs.vscode.enable = true;
+  programs.kdeconnect.enable = true;
 
   environment.systemPackages = with pkgs; [
     bitwarden-desktop

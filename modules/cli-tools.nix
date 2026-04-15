@@ -38,6 +38,9 @@
 
   # --- System Packages (The Essentials Only) ---
   environment.systemPackages = with pkgs; [
+    # 0. Others
+    scrcpy
+
     # 1. System Recovery & Core Utilities
     vim
     neovim # Your primary editor
