@@ -22,6 +22,24 @@
       # Simply enable plugins by their ID (from the registry)
       dankBatteryAlerts.enable = true;
       dockerManager.enable = true;
+      wallpaperCarousel.enable = true;
+      dankGifSearch.enable = true;
+      dankPomodoroTimer.enable = true;
+      dankLauncherKeys.enable = true;
+      dankNotepadModule.enable = true;
+      calculator.enable = true;
+      catWidget.enable = true;
+      fullscreenPowerMenu.enable = true;
+      dankAudioVisualizer.enable = true;
+      discordVoice.enable = true;
+      emojiLauncher.enable = true;
+      webSearch.enable = true;
+      sshMonitor.enable = true;
+      nixMonitor.enable = true;
+      asusControlCenter.enable = true;
+      commandRunner.enable = true;
+      dankBitwarden.enable = true;
+      gitmojiLauncher.enable = true;
     };
   };
 

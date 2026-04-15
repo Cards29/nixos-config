@@ -20,6 +20,26 @@
   services.playerctld.enable = true;
 
   environment.systemPackages = with pkgs; [
+    # Clipboard & Screenshots
+    wl-clipboard
+    cliphist
+    grim
+    slurp
+    swappy
+    
+    # Display & Input Debugging
+    wlr-randr
+    wlopm
+    wev
+    
+    # System Integration
+    xdg-utils
+    libnotify
+    wf-recorder
+    
+    # Niri Specifics (from previous suggestion)
+    nirius
+
     cava
     wtype
     khal
@@ -30,7 +50,6 @@
     binutils
     openssl
     home-manager
-    xdg-utils
     tailscale
     kanata
     lazygit
