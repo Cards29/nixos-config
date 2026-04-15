@@ -1,23 +1,29 @@
-{pkgs, ... }: {
-  programs.zsh.enable = true;
-  programs.zsh.interactiveShellInit = ''
-    # Override the command_not_found_handler to use nh
-    command_not_found_handler() {
-      nh search "$1"
-      return 127
-    }
-  '';
-  # Disable the default NixOS command-not-found perl script to prevent conflicts
-  programs.command-not-found.enable = false;
-  programs.nix-index.enable = true;
-  programs.nix-ld.enable = true;
-  programs.tmux.enable = true;
+{ pkgs, ... }: {
+
+  # --- Shell & Terminal Environment ---
+  programs.zsh = {
+    enable = true;
+    interactiveShellInit = ''
+      command_not_found_handler() {
+        nh search "$1"
+        return 127
+      }
+    '';
+  };
 
   programs.nh.enable = true;
+  programs.nix-index.enable = true;
+  programs.nix-ld.enable = true; 
+  programs.command-not-found.enable = false;
+
+  programs.tmux.enable = true;
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true; # This is the bridge for your Rust flakes
+  };
 
   programs.git = {
     enable = true;
-
     config = {
       init.defaultBranch = "main";
       user.name = "Rahinur Bin Naushad";
@@ -25,75 +31,60 @@
     };
   };
 
+  # --- System Services ---
   services.tailscale.enable = true;
+  services.playerctld.enable = true;
   virtualisation.docker.enable = true;
 
-  services.playerctld.enable = true;
-
+  # --- System Packages (The Essentials Only) ---
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    # 1. System Recovery & Core Utilities
+    vim
+    neovim # Your primary editor
+    wget
+    fastfetch
+    stow   # For your dotfiles
+    home-manager
+    comma  # "nix run" shorthand - vital for keeping system clean
+
+    # 2. Hardware Support (Zenbook 14)
     supergfxctl
     asusctl
-
-    # Clipboard & Screenshots
-    wl-clipboard
-    cliphist
-    grim
-    slurp
-    swappy
-    
-    # Display & Input Debugging
-    wlr-randr
-    wlopm
-    wev
-    
-    # System Integration
-    xdg-utils
-    libnotify
-    wf-recorder
-    
-    # Niri Specifics (from previous suggestion)
-    nirius
-
-    cava
-    wtype
-    khal
     brightnessctl
-    playerctl
-    fuzzel
-    pkg-config
-    binutils
-    openssl
-    home-manager
-    tailscale
     kanata
-    lazygit
-    wget
-    gcc
-    comma
-    uv
-    python315
-    direnv
-    pay-respects
-    neovim
-    starship
-    nerd-fonts.fira-code
-    bat
+
+    # 3. TUI File Management & Navigation
     yazi
-    stow
     fzf
     fd
     eza
     ripgrep
     zoxide
-    git	
-    fastfetch
-    repomix
-    fastfetch
-    rbw
+    bat
+    starship
+
+    # 4. Wayland / Niri Environment
+    wl-clipboard
+    cliphist
+    grim
+    slurp
+    swappy
+    wf-recorder
+    libnotify
+    xdg-utils
+    wlr-randr
+    wlopm
+    wev
+    wtype
+    fuzzel
+    nirius
+
+    # 5. Daily Drivers & Style
+    rbw # Bitwarden CLI
+    lazygit
+    cava
+    playerctl
+    khal
+    nerd-fonts.fira-code
   ];
-
-
-
-
 }
