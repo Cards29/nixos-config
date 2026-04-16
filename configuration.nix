@@ -14,6 +14,7 @@
       ./modules/gnome-extensions.nix
       ./modules/dms.nix
       ./modules/cursors.nix
+      ./modules/hibernation.nix
       ./niri.nix
       inputs.dms.nixosModules.default 
       inputs.dms-plugin-registry.modules.default
