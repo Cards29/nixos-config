@@ -112,9 +112,6 @@
     substituters = [
       "https://cache.nixos.org/"
     ];
-    trusted-public-keys = [
-      "cache.nixos.org-1:6NCHdD59X431o0gWypbF3zJfM5Qk5n8P5b7pY="
-    ];
   };
 
   # Allow unfree papckages
