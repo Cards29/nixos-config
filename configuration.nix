@@ -106,7 +106,15 @@
   environment.variables.NH_FLAKE = "/etc/nixos";
 
   # Nix experimental features
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    substituters = [
+      "https://cache.nixos.org/"
+    ];
+    trusted-public-keys = [
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbF3zJfM5Qk5n8P5b7pY="
+    ];
+  };
 
   # Allow unfree papckages
   nixpkgs.config.allowUnfree = true;
