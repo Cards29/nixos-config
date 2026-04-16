@@ -16,6 +16,6 @@
     stylua
 
     # (Optional: keep if you still use prettier anywhere)
-    nodePackages.prettier
+    prettier
   ];
 }
