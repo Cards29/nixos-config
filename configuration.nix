@@ -15,6 +15,7 @@
       ./modules/dms.nix
       ./modules/cursors.nix
       ./modules/hibernation.nix
+      ./modules/formatters.nix
       ./niri.nix
       inputs.dms.nixosModules.default 
       inputs.dms-plugin-registry.modules.default
