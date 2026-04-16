@@ -7,6 +7,7 @@
   programs.kdeconnect.enable = true;
 
   environment.systemPackages = with pkgs; [
+    mpv
     bitwarden-desktop
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     gnome-tweaks
