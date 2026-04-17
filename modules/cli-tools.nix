@@ -45,6 +45,8 @@
   # --- System Packages (The Essentials Only) ---
   environment.systemPackages = with pkgs; [
     # 0. Others
+    yt-dlp
+    chafa
     scrcpy
     pinentry-curses
 
