@@ -7,6 +7,7 @@
   programs.kdeconnect.enable = true;
 
   environment.systemPackages = with pkgs; [
+    localsend
     qbittorrent
     mpv
     bitwarden-desktop
