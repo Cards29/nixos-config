@@ -99,5 +99,6 @@
     playerctl
     khal
     nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
   ];
 }
