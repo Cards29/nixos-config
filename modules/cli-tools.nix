@@ -8,6 +8,20 @@
   programs.nh.enable = true;
   programs.nix-index.enable = true;
   programs.nix-ld.enable = true; 
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc
+    zlib
+    glib
+    gtk3
+    libxml2
+    freetype
+    fontconfig
+    xorg.libX11
+    xorg.libXrender
+    xorg.libXtst
+    xorg.libXi
+    xorg.libXrandr
+  ];
   programs.command-not-found.enable = false;
 
 
