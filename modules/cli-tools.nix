@@ -3,12 +3,6 @@
   # --- Shell & Terminal Environment ---
   programs.zsh = {
     enable = true;
-    interactiveShellInit = ''
-      command_not_found_handler() {
-        nh search "$1"
-        return 127
-      }
-    '';
   };
 
   programs.nh.enable = true;
@@ -46,6 +40,7 @@
   # --- System Packages (The Essentials Only) ---
   environment.systemPackages = with pkgs; [
     # 0. Others
+    speedtest-cli
     socat
     yt-dlp
     chafa
