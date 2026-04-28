@@ -8,6 +8,7 @@
 
   environment.systemPackages = with pkgs; [
     obs-studio
+    lutris
     localsend
     qbittorrent
     mpv
