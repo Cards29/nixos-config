@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
+
 {
   environment.systemPackages = with pkgs; [
+    lutris
     bottles
     wineWowPackages.stable
     winetricks
@@ -15,4 +17,9 @@
     driSupport = true;
     driSupport32Bit = true;
   };
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };  
 }

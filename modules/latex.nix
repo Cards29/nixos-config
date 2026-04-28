@@ -4,21 +4,14 @@
   environment.systemPackages = with pkgs; [
     (texlive.combine {
       inherit (texlive)
-        scheme-medium   # good base (NOT full, NOT tiny)
-        latexmk         # build tool (important)
-        biber           # bibliography (modern, better than bibtex)
-        biblatex
-        csquotes
-        geometry
-        hyperref
-        xcolor
-        graphicx
-        amsmath
-        amssymb
-        fontspec        # if using XeLaTeX/LuaLaTeX
-        titlesec
-        fancyhdr
-        enumitem;
+        scheme-medium   # Essential base
+        latexmk         # Required for Neovim/VimTeX automation
+        biber           # Modern bibliography backend
+        biblatex        # Better citation management
+        amsmath         # Non-negotiable for CS/Math formulas
+        hyperref        # Makes your PDF links/ToC clickable
+        geometry        # Easiest way to set margins (usually required by Uni)
+        enumitem;       # Better control over bullet points/lists
     })
   ];
 }

@@ -7,8 +7,8 @@
   programs.kdeconnect.enable = true;
 
   environment.systemPackages = with pkgs; [
+    zathura
     obs-studio
-    lutris
     localsend
     qbittorrent
     mpv
