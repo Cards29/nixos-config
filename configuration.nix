@@ -41,6 +41,13 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Cloudfare stuff
+  networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
+  # Optional: If you want to ignore the DNS provided by your router/DHCP:
+  networking.dhcpcd.extraConfig = "nohook resolv.conf"; 
+  # OR if using NetworkManager:
+  networking.networkmanager.dns = "none";
+
   # Set your time zone.
   time.timeZone = "Asia/Dhaka";
 
