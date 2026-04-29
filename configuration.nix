@@ -11,7 +11,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    # ./modules/gaming.nix
+    ./modules/gaming.nix
     ./modules/gui-apps.nix
     ./modules/cli-tools.nix
     ./modules/automation.nix

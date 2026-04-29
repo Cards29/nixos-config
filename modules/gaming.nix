@@ -15,7 +15,7 @@
     # Launchers & Compatibility
     lutris
     bottles
-    wine-wayland
+    # wine-wayland
     # wineWowPackages.stable # Staging often has better compatibility for repacks
     winetricks
     protonup-qt # Easiest way to install Proton-GE for Lutris/Bottles
@@ -27,6 +27,12 @@
     # gnome.adwaita-icon-theme # Prevents crashes in GTK-based installers
   ];
 
+  nixpkgs.config.packageOverrides = pkgs: {
+    openldap = pkgs.openldap.overrideAttrs (oldAttrs: {
+      doCheck = false;
+    });
+  };
+
   # Modern Hardware Graphics Configuration (NixOS 24.05+)
   hardware.graphics = {
     enable = true;
@@ -34,7 +40,7 @@
   };
 
   # Kernel tweaks for gaming performance (optional)
-  #   boot.kernel.sysctl = {
-  #     "vm.max_map_count" = 2147483642; # Required for some modern titles and heavy launchers
-  #   };
+  boot.kernel.sysctl = {
+    "vm.max_map_count" = 2147483642; # Required for some modern titles and heavy launchers
+  };
 }
