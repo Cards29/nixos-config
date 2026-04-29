@@ -18,6 +18,7 @@
       ./modules/formatters.nix
       ./modules/tmux.nix
       ./modules/latex.nix
+      ./modules/skwd-wall.nix
       ./niri.nix
       inputs.dms.nixosModules.default 
       inputs.dms-plugin-registry.modules.default
