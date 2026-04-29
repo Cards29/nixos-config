@@ -9,5 +9,7 @@
         biber     
         biblatex;
     })
+
+    tex-fmt
   ];
 }
