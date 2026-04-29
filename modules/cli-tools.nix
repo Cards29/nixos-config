@@ -52,6 +52,11 @@
   # --- System Packages (The Essentials Only) ---
   environment.systemPackages = with pkgs; [
     # 0. Others
+    ffmpeg
+    sqlite
+    inotify-tools
+    mpvpaper
+    jq
     distrobox-tui
     distrobox
     speedtest-cli

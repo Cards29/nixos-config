@@ -14,7 +14,6 @@
   environment.systemPackages = with pkgs; [
     # Launchers & Compatibility
     lutris
-    bottles
     # wine-wayland
     # wineWowPackages.stable # Staging often has better compatibility for repacks
     winetricks
