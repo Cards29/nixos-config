@@ -1,12 +1,15 @@
-{pkgs, inputs, ... }: 
-
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.firefox.enable = true;
   programs.steam.enable = true;
   programs.vscode.enable = true;
   programs.kdeconnect.enable = true;
 
   environment.systemPackages = with pkgs; [
+    distrobox
     zathura
     obs-studio
     localsend

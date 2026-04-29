@@ -1,9 +1,11 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     # C / C++
-    clang-tools  # provides clang-format
+    clang-tools # provides clang-format
 
     # Rust
     rustfmt
@@ -21,5 +23,8 @@
     # Nix
     alejandra
     nixfmt-rfc-style
+
+    # the boss
+    treefmt
   ];
 }
