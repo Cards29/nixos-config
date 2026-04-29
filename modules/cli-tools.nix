@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-
+{ pkgs, ... }:
+{
   # --- Shell & Terminal Environment ---
   programs.zsh = {
     enable = true;
@@ -7,7 +7,7 @@
 
   programs.nh.enable = true;
   programs.nix-index.enable = true;
-  programs.nix-ld.enable = true; 
+  programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     stdenv.cc.cc
     zlib
@@ -23,8 +23,6 @@
     xorg.libXrandr
   ];
   programs.command-not-found.enable = false;
-
-
 
   programs.direnv = {
     enable = true;
@@ -54,6 +52,7 @@
   # --- System Packages (The Essentials Only) ---
   environment.systemPackages = with pkgs; [
     # 0. Others
+    distrobox
     speedtest-cli
     socat
     yt-dlp
@@ -66,9 +65,9 @@
     neovim # Your primary editor
     wget
     fastfetch
-    stow   # For your dotfiles
+    stow # For your dotfiles
     home-manager
-    comma  # "nix run" shorthand - vital for keeping system clean
+    comma # "nix run" shorthand - vital for keeping system clean
 
     # 2. Hardware Support (Zenbook 14)
     supergfxctl

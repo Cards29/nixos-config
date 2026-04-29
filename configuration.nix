@@ -1,28 +1,31 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./modules/gui-apps.nix
-      ./modules/cli-tools.nix
-      ./modules/automation.nix
-      ./modules/gnome-extensions.nix
-      ./modules/dms.nix
-      ./modules/cursors.nix
-      ./modules/hibernation.nix
-      ./modules/formatters.nix
-      ./modules/tmux.nix
-      ./modules/latex.nix
-      ./modules/skwd-wall.nix
-      ./niri.nix
-      inputs.dms.nixosModules.default 
-      inputs.dms-plugin-registry.modules.default
-    ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+{
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./modules/gui-apps.nix
+    ./modules/cli-tools.nix
+    ./modules/automation.nix
+    ./modules/gnome-extensions.nix
+    ./modules/dms.nix
+    ./modules/cursors.nix
+    ./modules/hibernation.nix
+    ./modules/formatters.nix
+    ./modules/tmux.nix
+    ./modules/latex.nix
+    ./modules/skwd-wall.nix
+    ./niri.nix
+    inputs.dms.nixosModules.default
+    inputs.dms-plugin-registry.modules.default
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -31,7 +34,8 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.initrd.luks.devices."luks-c8286c88-1d79-44fb-88ba-5517c29e95a8".device = "/dev/disk/by-uuid/c8286c88-1d79-44fb-88ba-5517c29e95a8";
+  boot.initrd.luks.devices."luks-c8286c88-1d79-44fb-88ba-5517c29e95a8".device =
+    "/dev/disk/by-uuid/c8286c88-1d79-44fb-88ba-5517c29e95a8";
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -43,9 +47,12 @@
   networking.networkmanager.enable = true;
 
   # Cloudfare stuff
-  networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
+  networking.nameservers = [
+    "1.1.1.1"
+    "1.0.0.1"
+  ];
   # Optional: If you want to ignore the DNS provided by your router/DHCP:
-  networking.dhcpcd.extraConfig = "nohook resolv.conf"; 
+  networking.dhcpcd.extraConfig = "nohook resolv.conf";
   # OR if using NetworkManager:
   networking.networkmanager.dns = "none";
 
@@ -107,9 +114,13 @@
     isNormalUser = true;
     description = "Rahinur Bin Naushad";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -118,7 +129,10 @@
 
   # Nix experimental features
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     substituters = [
       "https://cache.nixos.org/"
     ];

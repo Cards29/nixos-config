@@ -1,5 +1,4 @@
-{pkgs, inputs, ... }: 
-
+{ pkgs, inputs, ... }:
 {
   environment.systemPackages = with pkgs; [
     gnomeExtensions.blur-my-shell

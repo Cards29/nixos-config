@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   environment.systemPackages = with pkgs; [
     lutris
@@ -8,9 +7,9 @@
     winetricks
     vulkan-tools
     # Required for many repack installers to not crash
-    gnome.adwaita-icon-theme 
+    gnome.adwaita-icon-theme
   ];
-  
+
   # Ensure hardware acceleration is enabled
   hardware.opengl = {
     enable = true;
@@ -21,5 +20,5 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
-  };  
+  };
 }

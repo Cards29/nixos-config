@@ -43,20 +43,27 @@
     };
   };
 
-  outputs = { self, nixpkgs, niri, ... }@inputs: {
-    nixosConfigurations = {
+  outputs =
+    {
+      self,
+      nixpkgs,
+      niri,
+      ...
+    }@inputs:
+    {
+      nixosConfigurations = {
 
-      # Change "nixos" to your actual hostname
-      "nixos" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";   # Change only if you're on ARM (like Raspberry Pi)
+        # Change "nixos" to your actual hostname
+        "nixos" = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux"; # Change only if you're on ARM (like Raspberry Pi)
 
-        specialArgs = { inherit inputs niri; };
+          specialArgs = { inherit inputs niri; };
 
-        modules = [
-          ./configuration.nix
-          ./hardware-configuration.nix
-        ];
+          modules = [
+            ./configuration.nix
+            ./hardware-configuration.nix
+          ];
+        };
       };
     };
-  };
 }

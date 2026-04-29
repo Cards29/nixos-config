@@ -1,12 +1,16 @@
-{pkgs, configs, inputs, ... }: 
-
+{
+  pkgs,
+  configs,
+  inputs,
+  ...
+}:
 {
   programs.tmux = {
     enable = true;
-    shortcut = "a";       # Sets prefix to Ctrl-a
-    baseIndex = 1;        # Start windows/panes at 1
-    escapeTime = 0;       # Lower escape timing for snappier response
-    keyMode = "vi";       # vi-style keybindings
+    shortcut = "a"; # Sets prefix to Ctrl-a
+    baseIndex = 1; # Start windows/panes at 1
+    escapeTime = 0; # Lower escape timing for snappier response
+    keyMode = "vi"; # vi-style keybindings
 
     # These plugins are handled by Nix instead of TPM
     plugins = with pkgs.tmuxPlugins; [

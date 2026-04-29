@@ -9,7 +9,6 @@
   programs.kdeconnect.enable = true;
 
   environment.systemPackages = with pkgs; [
-    distrobox
     zathura
     obs-studio
     localsend

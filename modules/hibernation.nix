@@ -1,10 +1,11 @@
 { config, pkgs, ... }:
-
 {
   # Define the swap device matching your lsblk output
-  swapDevices = [{
-    device = "/dev/mapper/luks-c8286c88-1d79-44fb-88ba-5517c29e95a8";
-  }];
+  swapDevices = [
+    {
+      device = "/dev/mapper/luks-c8286c88-1d79-44fb-88ba-5517c29e95a8";
+    }
+  ];
 
   boot = {
     # 1. Point the kernel to the unlocked swap partition for resume
