@@ -17,5 +17,9 @@
 
     # (Optional: keep if you still use prettier anywhere)
     prettier
+
+    # Nix
+    alejandra
+    nixfmt-rfc-style
   ];
 }
