@@ -11,6 +11,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    # ./modules/gaming.nix
     ./modules/gui-apps.nix
     ./modules/cli-tools.nix
     ./modules/automation.nix
@@ -133,11 +134,21 @@
       "nix-command"
       "flakes"
     ];
+
+    # Binary caches (Option 4)
     substituters = [
       "https://cache.nixos.org/"
+      "https://nix-gaming.cachix.org"
     ];
-  };
 
+    trusted-public-keys = [
+      "nix-gaming.cachix.org-1:6NCHdD59X431o0gWypdK8F6S1cIh0f6JQy1+ZC0Yl0E="
+    ];
+
+    # Parallel builds (Option 3)
+    max-jobs = "auto";
+    cores = 0;
+  };
   # Allow unfree papckages
   nixpkgs.config.allowUnfree = true;
 
