@@ -22,9 +22,9 @@
 
     # Nix
     alejandra
-    nixfmt-rfc-style
+    nixfmt
 
-    # the boss
-    treefmt
+    # TOML
+    taplo
   ];
 }
