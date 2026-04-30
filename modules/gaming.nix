@@ -4,6 +4,7 @@
   # Enable Steam (even if not used, it sets up essential drivers and udev rules)
   programs.steam = {
     enable = true;
+    gamescopeSession.enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
@@ -12,7 +13,11 @@
   programs.gamemode.enable = true;
 
   environment.systemPackages = with pkgs; [
+    # Vimjoyer
+    mangohud
+
     # Launchers & Compatibility
+    heroic
     lutris
     # wine-wayland
     # wineWowPackages.stable # Staging often has better compatibility for repacks
