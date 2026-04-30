@@ -21,6 +21,7 @@
     ./modules/hibernation.nix
     ./modules/formatters.nix
     ./modules/gtk-themes.nix
+    ./modules/plasma.nix
     ./modules/tmux.nix
     ./modules/latex.nix
     ./modules/skwd-wall.nix
