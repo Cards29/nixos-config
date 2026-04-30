@@ -10,6 +10,8 @@
   services.flatpak.enable = true;
 
   environment.systemPackages = with pkgs; [
+    winboat
+    freerdp
     gnome-software
     zathura
     obs-studio
