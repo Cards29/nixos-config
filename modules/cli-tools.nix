@@ -52,6 +52,7 @@
   # --- System Packages (The Essentials Only) ---
   environment.systemPackages = with pkgs; [
     # 0. Others
+    youtube-tui
     ffmpeg
     sqlite
     inotify-tools
