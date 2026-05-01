@@ -116,5 +116,19 @@
     khal
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
+
+    # 6. Archive and Extraction Tools
+    p7zip
+    zip
+    unzip
+    unrar
+    zstd
+    xz
+    gzip
+    bzip2
+
+    # universal extractor
+    ouch
+    atool
   ];
 }
