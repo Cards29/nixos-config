@@ -9,7 +9,7 @@
 
   # 3. Optional: Use the absolute latest "unstable" version from the flake
   # If you don't set this, it defaults to the stable version in the flake.
-  programs.niri.package = pkgs.niri-unstable;
+  programs.niri.package = pkgs.niri;
 
   # The sodiboo module automatically handles:
   # - Polkit (KDE agent by default)

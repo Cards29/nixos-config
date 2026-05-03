@@ -14,7 +14,6 @@
     ./modules/gaming.nix
     ./modules/gui-apps.nix
     ./modules/cli-tools.nix
-    ./modules/automation.nix
     ./modules/gnome-extensions.nix
     ./modules/dms.nix
     ./modules/cursors.nix
@@ -24,7 +23,6 @@
     ./modules/plasma.nix
     ./modules/tmux.nix
     ./modules/latex.nix
-    ./modules/skwd-wall.nix
     ./niri.nix
     inputs.dms.nixosModules.default
     inputs.dms-plugin-registry.modules.default

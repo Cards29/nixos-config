@@ -15,8 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    skwd-wall.url = "github:liixini/skwd-wall";
-
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -61,7 +59,6 @@
 
           modules = [
             ./configuration.nix
-            ./hardware-configuration.nix
           ];
         };
       };
