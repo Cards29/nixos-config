@@ -1,7 +1,5 @@
 {
   pkgs,
-  configs,
-  inputs,
   ...
 }:
 {
@@ -12,11 +10,11 @@
     escapeTime = 0; # Lower escape timing for snappier response
     keyMode = "vi"; # vi-style keybindings
 
-    # These plugins are handled by Nix instead of TPM
+    # NixOS only accepts packages here, no attribute sets!
     plugins = with pkgs.tmuxPlugins; [
       vim-tmux-navigator
       resurrect
-      continuum
+      continuum # Continuum should remain last
     ];
 
     extraConfig = ''
@@ -36,7 +34,10 @@
       set -g status-style "bg=default"
       set -g message-style "bg=default"
       set -g message-command-style "bg=default"
-      set -g status-right ""
+
+      # FIX 1: Continuum NEEDS a status-right variable to run autosave.
+      set -g status-right "#{continuum_status}"
+
       set -g status-left "#{?client_prefix,#[fg=yellow bold] PFX ,}"
       set -g window-status-format ' #I:#W '
       set -g window-status-current-format '#[fg=blue bg=default bold] #I:#W '
@@ -80,9 +81,22 @@
       bind-key -T copy-mode-vi 'y' send -X copy-selection 
       unbind -T copy-mode-vi MouseDragEnd1Pane 
 
-      # Plugin Settings
-      set -g @resurrect-capture-pane-contents 'on' 
-      set -g @continuum-restore 'on' 
+      # ==========================
+      # === PLUGIN SETTINGS ===
+      # ==========================
+
+      # --- Resurrect ---
+      set -g @resurrect-capture-pane-contents 'on'
+
+      # FIX 2: NixOS Store Path Fix
+      # Strip absolute /nix/store paths from the save file so sessions survive updates
+      resurrect_dir="$HOME/.local/share/tmux/resurrect"
+      set -g @resurrect-dir $resurrect_dir
+      set -g @resurrect-hook-post-save-all 'target=$(readlink -f $resurrect_dir/last); sed -i "s|/nix/store/[^/]*/bin/||g" $target'
+
+      # --- Continuum ---
+      set -g @continuum-restore 'on'
+      set -g @continuum-save-interval '15' 
     '';
   };
 }
