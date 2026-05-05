@@ -12,6 +12,7 @@
   environment.systemPackages = with pkgs; [
     winboat
     freerdp
+    upscayl
     gnome-software
     zathura
     obs-studio
