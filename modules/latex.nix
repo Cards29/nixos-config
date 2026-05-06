@@ -12,6 +12,8 @@
         latexmk
         biber
         biblatex
+        lipsum
+        ucs
         ;
     })
 

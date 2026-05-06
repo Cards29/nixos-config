@@ -19,11 +19,11 @@
     libxml2
     freetype
     fontconfig
-    xorg.libX11
-    xorg.libXrender
-    xorg.libXtst
-    xorg.libXi
-    xorg.libXrandr
+    libX11
+    libXrender
+    libXtst
+    libXi
+    libXrandr
   ];
   programs.command-not-found.enable = false;
 
