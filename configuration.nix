@@ -14,6 +14,7 @@
     ./modules/gaming.nix
     ./modules/gui-apps.nix
     ./modules/cli-tools.nix
+    ./modules/python_stuff.nix
     ./modules/gnome-extensions.nix
     ./modules/dms.nix
     ./modules/cursors.nix

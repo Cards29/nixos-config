@@ -10,6 +10,9 @@
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     stdenv.cc.cc
+    fuse3
+    openssl
+    icu
     zlib
     glib
     gtk3
