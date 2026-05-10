@@ -55,6 +55,7 @@
   # --- System Packages (The Essentials Only) ---
   environment.systemPackages = with pkgs; [
     # 0. Others
+    gcc
     repomix
     youtube-tui
     ffmpeg
